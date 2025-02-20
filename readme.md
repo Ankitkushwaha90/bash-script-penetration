@@ -4,11 +4,12 @@ Bash Scripting Tutorial: Examples for Learning
 1. Hello World
 The simplest script to get started.
 
-bash
-Copy
+```bash
+
 #!/bin/bash
 # Hello World Script
 echo "Hello, World!"
+```
 Explanation:
 
 #!/bin/bash: Specifies the interpreter (Bash).
@@ -18,13 +19,13 @@ echo: Prints text to the terminal.
 2. Variables
 Learn how to declare and use variables.
 
-bash
-Copy
+```bash
 #!/bin/bash
 # Variables Example
 name="John"
 age=25
 echo "My name is $name and I am $age years old."
+```
 Explanation:
 
 Variables are declared without spaces around =.
@@ -34,13 +35,13 @@ Use $ to access the value of a variable.
 3. User Input
 Read input from the user.
 
-bash
-Copy
+```bash
 #!/bin/bash
 # User Input Example
 echo "What is your name?"
 read name
 echo "Hello, $name!"
+```
 Explanation:
 
 read: Captures user input and stores it in a variable.
@@ -48,8 +49,7 @@ read: Captures user input and stores it in a variable.
 4. Conditional Statements
 Use if-else for decision-making.
 
-bash
-Copy
+```bash
 #!/bin/bash
 # Conditional Example
 echo "Enter a number:"
@@ -59,6 +59,7 @@ if [ $num -gt 10 ]; then
 else
     echo "The number is 10 or less."
 fi
+```
 Explanation:
 
 if [ condition ]; then: Checks a condition.
@@ -71,16 +72,15 @@ fi: Ends the if block.
 Use for and while loops.
 
 For Loop
-bash
-Copy
+```bash
 #!/bin/bash
 # For Loop Example
 for i in {1..5}; do
     echo "Iteration $i"
 done
+```
 While Loop
-bash
-Copy
+```bash
 #!/bin/bash
 # While Loop Example
 count=1
@@ -88,6 +88,7 @@ while [ $count -le 5 ]; do
     echo "Count: $count"
     count=$((count + 1))
 done
+```
 Explanation:
 
 for: Iterates over a range or list.
@@ -97,8 +98,7 @@ while: Repeats as long as a condition is true.
 6. Functions
 Create reusable code blocks.
 
-bash
-Copy
+```bash
 #!/bin/bash
 # Function Example
 greet() {
@@ -106,6 +106,7 @@ greet() {
 }
 greet "Alice"
 greet "Bob"
+```
 Explanation:
 
 greet(): Defines a function.
@@ -115,14 +116,14 @@ $1: Refers to the first argument passed to the function.
 7. Command-Line Arguments
 Access arguments passed to the script.
 
-bash
-Copy
+```bash
 #!/bin/bash
 # Command-Line Arguments Example
 echo "First argument: $1"
 echo "Second argument: $2"
 echo "All arguments: $@"
 echo "Number of arguments: $#"
+```
 Explanation:
 
 $1, $2: Access specific arguments.
@@ -134,8 +135,7 @@ $#: Number of arguments.
 8. File Operations
 Read and write files.
 
-bash
-Copy
+```bash
 #!/bin/bash
 # File Operations Example
 file="example.txt"
@@ -143,6 +143,7 @@ echo "Creating $file..."
 echo "Hello, File!" > $file
 echo "Content of $file:"
 cat $file
+```
 Explanation:
 
 >: Overwrites a file.
@@ -154,13 +155,13 @@ cat: Displays file content.
 9. Arrays
 Store and manipulate lists of items.
 
-bash
-Copy
+```bash
 #!/bin/bash
 # Array Example
 fruits=("Apple" "Banana" "Cherry")
 echo "First fruit: ${fruits[0]}"
 echo "All fruits: ${fruits[@]}"
+```
 Explanation:
 
 fruits=(): Declares an array.
@@ -172,8 +173,7 @@ ${fruits[@]}: Accesses all elements.
 10. Case Statements
 Handle multiple conditions.
 
-bash
-Copy
+```bash
 #!/bin/bash
 # Case Statement Example
 echo "Enter a fruit:"
@@ -184,6 +184,7 @@ case $fruit in
     "Cherry") echo "You chose Cherry." ;;
     *) echo "Unknown fruit." ;;
 esac
+```
 Explanation:
 
 case: Matches a variable against patterns.
@@ -193,8 +194,7 @@ case: Matches a variable against patterns.
 11. Error Handling
 Check for errors and exit gracefully.
 
-bash
-Copy
+```bash
 #!/bin/bash
 # Error Handling Example
 echo "Enter a file name:"
@@ -205,6 +205,7 @@ else
     echo "File does not exist. Exiting."
     exit 1
 fi
+```
 Explanation:
 
 -f: Checks if a file exists.
@@ -214,14 +215,15 @@ exit 1: Exits the script with an error code.
 12. Debugging
 Enable debugging to trace script execution.
 
-bash
-Copy
+```bash
 #!/bin/bash
 # Debugging Example
 set -x  # Enable debugging
 echo "Debugging is enabled."
 set +x  # Disable debugging
 echo "Debugging is disabled."
+```
+
 Explanation:
 
 set -x: Enables debugging.
@@ -231,12 +233,12 @@ set +x: Disables debugging.
 13. Subshells and Command Substitution
 Run commands in subshells and capture output.
 
-bash
-Copy
+```bash
 #!/bin/bash
 # Subshell Example
 current_date=$(date)
 echo "Today's date is $current_date."
+```
 Explanation:
 
 $(command): Captures the output of a command.
@@ -244,13 +246,13 @@ $(command): Captures the output of a command.
 14. Networking
 Ping a remote server.
 
-bash
-Copy
+```bash
 #!/bin/bash
 # Networking Example
 echo "Enter a hostname or IP address:"
 read host
 ping -c 4 $host
+```
 Explanation:
 
 ping -c 4: Sends 4 ICMP packets to the host.
@@ -258,8 +260,7 @@ ping -c 4: Sends 4 ICMP packets to the host.
 15. Advanced: Process Management
 List and kill processes.
 
-bash
-Copy
+```bash
 #!/bin/bash
 # Process Management Example
 echo "Listing all running processes:"
@@ -267,6 +268,7 @@ ps aux
 echo "Enter a PID to kill:"
 read pid
 kill -9 $pid
+```
 Explanation:
 
 ps aux: Lists all processes.
@@ -276,13 +278,13 @@ kill -9: Forcefully kills a process.
 16. Advanced: Cron Jobs
 Schedule a script to run periodically.
 
-bash
-Copy
+```bah
 #!/bin/bash
 # Cron Job Example
 echo "Adding a cron job to run this script every minute..."
 (crontab -l 2>/dev/null; echo "* * * * * /path/to/your/script.sh") | crontab -
 echo "Cron job added."
+```
 Explanation:
 
 crontab -l: Lists existing cron jobs.
